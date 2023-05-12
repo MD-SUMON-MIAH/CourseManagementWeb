@@ -15,6 +15,17 @@
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
+
+.card {
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+
+
 /* footer style starts */
 
 .site-footer
@@ -186,6 +197,7 @@
 
 </style>
     <title>LEARN HUB</title>
+    <link rel="icon" href="img/logo2.png" sizes="32x32" type="image/png">
   </head>
   <body>
    <%@include file="component/navbar.jsp" %>
@@ -272,7 +284,7 @@
 	<hr>
 
 	<div class="container-fluid p-2">
-		<p class="text-center fs-2 ">Our Coureses</p>
+		<p class="text-center fs-2 ">Our Courses</p>
 		
 		<div class="row">
 			<div class="col-md-3">

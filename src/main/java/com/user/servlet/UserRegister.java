@@ -23,8 +23,8 @@ public class UserRegister extends HttpServlet {
 			String fullName = req.getParameter("fullname");
 			String email = req.getParameter("email");
 			String password = req.getParameter("password");
-
-			User u = new User(fullName, email, password);
+            String mobNo = req.getParameter("mobno");
+			User u = new User(fullName, email, password, mobNo);
 
 			UserDao dao = new UserDao(DBConnect.getConn());
 
@@ -35,7 +35,7 @@ public class UserRegister extends HttpServlet {
 			if (f) {
 
 				session.setAttribute("sucMsg", "Register Sucessfully");
-				resp.sendRedirect("signup.jsp");
+				resp.sendRedirect("user_login.jsp");
 
 			} else {
 				session.setAttribute("errorMsg", "Something wrong on server");

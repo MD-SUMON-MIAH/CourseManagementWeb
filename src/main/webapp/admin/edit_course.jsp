@@ -13,6 +13,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Edit Course Page</title>
+<link rel="icon" href="../img/logo2.png" sizes="32x32" type="image/png">
 <%@include file="../component/allcdn.jsp"%>
 <style type="text/css">
 .paint-card {
@@ -28,7 +29,7 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card paint-card">
 					<div class="card-body">
-						<p class="fs-3 text-center">Edit Teacher Details</p>
+						<p class="fs-3 text-center">Edit Course Details</p>
 						<c:if test="${not empty errorMsg}">
 							<p class="fs-3 text-center text-danger">${errorMsg}</p>
 							<c:remove var="errorMsg" scope="session" />
@@ -48,7 +49,7 @@
 						<form action="../updateCourse" method="post">
 							<div class="mb-3">
 								<label class="form-label">Course Name</label> <input type="text"
-									required name="fullname" class="form-control"
+									required name="coursename" class="form-control"
 									value="<%=c.getCourseName()%>">
 							</div>
 
@@ -86,6 +87,12 @@
 							<div class="mb-3">
 								<label class="form-label">Mob No</label> <input type="text"
 									value="<%=c.getMobNo()%>" required name="mobno"
+									class="form-control">
+							</div>
+							
+							<div class="mb-3">
+								<label class="form-label">Course Code</label> <input type="text"
+									value="<%=c.getCourseCode()%>" required name="coursecode"
 									class="form-control">
 							</div>
 

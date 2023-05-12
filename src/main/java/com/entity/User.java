@@ -5,6 +5,7 @@ public class User {
 	private String fullName;
 	private String email;
 	private String password;
+	private String mobNo;
 
 	
 	public User() { 
@@ -13,11 +14,12 @@ public class User {
 	  }
 	 
 
-	public User(String fullName, String email, String password) {
+	public User(String fullName, String email, String password, String mobNo) {
 		super();
 		this.fullName = fullName;
 		this.email = email;
 		this.password = password;
+		this.mobNo = mobNo;
 	}
 
 	public int getId() {
@@ -51,12 +53,21 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public String getMobNo() {
+		return mobNo;
+	}
 
-	public User(String fullName, String email, String password) {
+	public void setMobNo(String mobNo) {
+		this.mobNo = mobNo;
+	}
+
+	public User(String fullName, String email, String password, String mobNo) {
 		super();
 		this.fullName = fullName;
 		this.email = email;
 		this.password = password;
+		this.mobNo=mobNo;
 	}
 
 }

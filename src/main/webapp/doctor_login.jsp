@@ -10,6 +10,13 @@
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
+.card {
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
 </style>
 </head>
 <body>
@@ -20,7 +27,7 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card paint-card">
 					<div class="card-body">
-						<p class="fs-4 text-center bg-info">Teacher Login</p>
+						<p class="fs-4 text-center">Teacher Login</p>
 						
 						<c:if test="${not empty succMsg }">
 							<p class="text-center text-success fs-3">${succMsg}</p>
@@ -41,7 +48,7 @@
 								<label class="form-label">Password</label> <input required
 									name="password" type="password" class="form-control">
 							</div>
-							<button type="submit" class="btn btn-outline-info text-black col-md-12">Login</button>
+							<button type="submit" class="btn btn-info btn-rounded text-black col-md-12">Login</button>
 						</form>
 					
 					</div>

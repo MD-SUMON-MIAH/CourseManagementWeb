@@ -22,7 +22,7 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card paint-card">
 					<div class="card-body">
-						<p class="fs-4 text-center bg-info">Admin Login</p>
+						<p class="fs-4 text-center">Admin Login</p>
 						 <c:if test="${not empty succMsg }">
 							<p class="text-center text-success fs-3">${succMsg}</p>
 							<c:remove var="succMsg" scope="session" />
@@ -44,7 +44,7 @@
 									name="password" type="password" class="form-control">
 							</div>
 
-							<button type="submit" class="btn btn-outline-info text-black col-md-12">Login</button>
+							<button type="submit" class="btn btn-info btn-rounded text-black col-md-12">Login</button>
 						</form>
 					</div>
 				</div>

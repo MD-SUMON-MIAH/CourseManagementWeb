@@ -13,6 +13,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Courses Page</title>
+<link rel="icon" href="../img/logo2.png" sizes="32x32" type="image/png">
 <%@include file="../component/allcdn.jsp"%>
 <style type="text/css">
 .paint-card {
@@ -75,6 +76,11 @@
 								<label class="form-label">Mob No</label> <input type="text"
 									required name="mobno" class="form-control">
 							</div>
+							
+							<div class="mb-3">
+								<label class="form-label">Course Code</label> <input type="text"
+									required name="coursecode" class="form-control">
+							</div>
 
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</form>
@@ -94,6 +100,7 @@
 					          <th scope="col">Specialist</th>
 					          <th scope="col">Email</th>
 					          <th scope="col">Mob No</th>
+					          <th scope="col">Course Code</th>
 					          <th scope="col">Action</th>
 		                </tr>
 		              </thead>
@@ -110,6 +117,7 @@
 		                   <td><%=c.getSpecialist() %></td>
 		                   <td><%=c.getEmail() %></td>
 		                   <td><%=c.getMobNo() %></td>
+		                   <td><%=c.getCourseCode() %></td>
 		                   <td>
 		                   <a href="edit_course.jsp?id=<%=c.getId()%>" class="btn btn-sm btn-primary">Edit</a>
 		                   <a href="../deleteCourse?id=<%=c.getId()%>" class="btn btn-sm btn-danger">Delete</a>

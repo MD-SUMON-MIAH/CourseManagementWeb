@@ -26,16 +26,17 @@ public class UpdateCourse extends HttpServlet {
 			String spec = req.getParameter("spec");
 			String email = req.getParameter("email");
 			String mobno = req.getParameter("mobno");
-
+			String courseCode=req.getParameter("coursecode");
+             System.out.println(courseName);
 			int id = Integer.parseInt(req.getParameter("id"));
 
-			Course c = new Course(id,courseName, teacherName, spec, email, mobno);
+			Course c = new Course(id,courseName, teacherName, spec, email, mobno, courseCode);
 
 			CourseDao dao = new CourseDao(DBConnect.getConn());
 			HttpSession session = req.getSession();
 
 			if (dao.updateCourse(c)) {
-				session.setAttribute("succMsg", "Course Update Sucessfully..");
+				session.setAttribute("succMsg", "Course Updated Sucessfully..");
 				resp.sendRedirect("admin/course.jsp");
 			} else {
 				session.setAttribute("errorMsg", "something wrong on server");

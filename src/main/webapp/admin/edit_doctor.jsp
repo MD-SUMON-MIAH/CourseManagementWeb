@@ -11,6 +11,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Edit Teacher Page</title>
+<link rel="icon" href="../img/logo2.png" sizes="32x32" type="image/png">
 <%@include file="../component/allcdn.jsp"%>
 <style type="text/css">
 .paint-card {

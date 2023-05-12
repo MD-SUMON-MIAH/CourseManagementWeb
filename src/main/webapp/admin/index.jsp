@@ -8,11 +8,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin Dashboard</title>
+<link rel="icon" href="../img/logo2.png" sizes="32x32" type="image/png">
 <%@include file="../component/allcdn.jsp"%>
 <style type="text/css">
 .paint-card {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); 
 }
+.card {
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+
 </style>
 </head>
 <body>
@@ -76,7 +86,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-4 mt-2">
+			<div class="col-md-4 mt-4">
 
 				<div class="card paint-card " data-bs-toggle="modal"
 					data-bs-target="#exampleModal">

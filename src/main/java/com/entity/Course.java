@@ -8,22 +8,24 @@ public class Course {
 	private String specialist;
 	private String email;
 	private String mobNo;
+	private String courseCode;
 
 	public Course() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Course(String courseName, String teacherName, String specialist, String email, String mobNo) {
+	public Course(String courseName, String teacherName, String specialist, String email, String mobNo, String courseCode) {
 		super();
 		this.courseName = courseName;
 		this.teacherName = teacherName;
 		this.specialist = specialist;
 		this.email = email;
 		this.mobNo = mobNo;
+		this.courseCode=courseCode;
 	}
 
-	public Course(int id, String courseName, String teacherName,String specialist, String email,String mobNo) {
+	public Course(int id, String courseName, String teacherName,String specialist, String email,String mobNo, String courseCode) {
 		super();
 		this.id = id;
 		this.courseName = courseName;
@@ -31,6 +33,7 @@ public class Course {
 		this.specialist = specialist;
 		this.email = email;
 		this.mobNo = mobNo;
+		this.courseCode=courseCode;
 	}
 
 	public int getId() {
@@ -80,6 +83,14 @@ public class Course {
 
 	public void setMobNo(String mobNo) {
 		this.mobNo = mobNo;
+	}
+	
+	public String getCourseCode() {
+		return courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		this.courseCode = courseCode;
 	}
 
 }

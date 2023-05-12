@@ -12,7 +12,7 @@ import com.db.DBConnect;
 import com.entity.Course;
 
 
-@WebServlet("/Enrolrlcourse")
+@WebServlet("/Enrollcourse")
 public class Enrollcourse extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -23,16 +23,20 @@ public class Enrollcourse extends HttpServlet {
 		CourseDao d=new CourseDao(DBConnect.getConn());
 		HttpSession session = request.getSession();
 		String k=request.getParameter("C_id");
+		String k2=request.getParameter("S_id");
 		int kk=Integer.parseInt(k);
-		d.EnrollArray(kk);
+		//d.EnrollArray(kk);
 		System.out.print(kk);
+		int kk2=Integer.parseInt(k2);
+		//d.EnrollArray(kk);
+		System.out.print(kk2);
 		
 		//response.sendRedirect("all_courses.jsp");
-		if (d.InsCourse(kk)) {
+		if (d.InsCourse(kk,kk2)) {
 			session.setAttribute("succMsg", "Course Added Sucessfully..");
 			response.sendRedirect("all_courses.jsp");
 		} else {
-			session.setAttribute("errorMsg", "something wrong on server");
+			session.setAttribute("errorMsg", "Something wrong on server");
 			response.sendRedirect("all_courses.jsp");
 		}
 		

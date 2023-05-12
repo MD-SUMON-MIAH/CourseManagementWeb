@@ -22,7 +22,7 @@
 			<div class="col-md-4 offset-md-4">
 				<div class="card paint-card">
 					<div class="card-body">
-						<p class="fs-4 text-center">User Register</p>
+						<p class="fs-4 text-center">Student Register</p>
 
 						<c:if test="${not empty sucMsg }">
 							<p class="text-center text-success fs-3">${sucMsg}</p>
@@ -48,8 +48,13 @@
 								<label class="form-label">Password</label> <input required
 									name="password" type="password" class="form-control">
 							</div>
+							
+							<div class="mb-3">
+								<label class="form-label">Mob No</label> <input required
+									name="mobno" type="text" class="form-control">
+							</div>
 
-							<button type="submit" class="btn btn-outline-info text-black col-md-12">Register</button>
+							<button type="submit" class="btn btn-info btn-rounded text-black col-md-12">Register</button>
 						</form>
 					</div>
 				</div>

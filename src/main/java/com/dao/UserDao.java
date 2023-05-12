@@ -3,7 +3,10 @@ package com.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.entity.Doctor;
 import com.entity.User;
 
 public class UserDao {
@@ -19,13 +22,13 @@ public class UserDao {
 		boolean f = false;
 
 		try {
-			String sql = "insert into user_dtls(full_name,email,password) values(?,?,?) ";
+			String sql = "insert into user_dtls(full_name,email,password,mobno) values(?,?,?,?) ";
 
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, u.getFullName());
 			ps.setString(2, u.getEmail());
 			ps.setString(3, u.getPassword());
-
+            ps.setString(4, u.getMobNo());
 			int i = ps.executeUpdate();
 
 			if (i == 1) {
@@ -56,6 +59,7 @@ public class UserDao {
 				u.setFullName(rs.getString(2));
 				u.setEmail(rs.getString(3));
 				u.setPassword(rs.getString(4));
+				u.setMobNo(rs.getString(5));
 			}
 
 		} catch (Exception e) {
@@ -64,7 +68,64 @@ public class UserDao {
 
 		return u;
 	}
+	
+	
+	
+	public List<User> getAllUser() {
+		List<User> list = new ArrayList<User>();
+		User d = null;
+		try {
 
+			String sql = "select * from user_dtls order by id desc";
+			PreparedStatement ps = conn.prepareStatement(sql);
+
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				d = new User();
+				d.setId(rs.getInt(1));
+				d.setFullName(rs.getString(2));
+				d.setEmail(rs.getString(3));
+				d.setPassword(rs.getString(4));
+				d.setMobNo(rs.getString(5));
+				list.add(d);
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	
+	
+	public User getUserById(int id) {
+
+		User d = null;
+		try {
+
+			String sql = "select * from user_dtls where id=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				d = new User();
+				d.setId(rs.getInt(1));
+				d.setFullName(rs.getString(2));
+				d.setEmail(rs.getString(3));
+				d.setPassword(rs.getString(4));
+				d.setMobNo(rs.getString(5));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return d;
+	}
+	
+	
+	
+	
 	public boolean checkOldPassword(int userid, String oldPassword) {
 		boolean f = false;
 

@@ -1,9 +1,3 @@
-<!-- <div class="container-fluid p-1 bg-success text-center text-white">
-	<p>@copyright .com</p>
-</div> -->
-
-
-
   <!-- Site footer -->
     <footer class="site-footer mt-4">
       <div class="container">

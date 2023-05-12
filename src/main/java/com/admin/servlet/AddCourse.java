@@ -25,11 +25,13 @@ public class AddCourse extends HttpServlet {
 			String teacherName = req.getParameter("teachername");
 
 			String spec = req.getParameter("spec");
-
-			String email = req.getParameter("email");
+            String email = req.getParameter("email");
+            
 			String mobno = req.getParameter("mobno");
+			String courseCode= req.getParameter("coursecode");
+			
 
-			Course c = new Course(courseName, teacherName, spec, email, mobno);
+			Course c = new Course(courseName, teacherName, spec, email, mobno, courseCode);
 
 			CourseDao dao = new CourseDao(DBConnect.getConn());
 			HttpSession session = req.getSession();

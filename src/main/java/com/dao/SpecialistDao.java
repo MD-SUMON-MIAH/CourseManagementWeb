@@ -19,13 +19,11 @@ public class SpecialistDao {
 
 	public boolean addSpecialist(String spec) {
 		boolean f = false;
-		int id=8;
 		try {
 			String sql = "insert into specialist(spec_name) values(?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			//ps.setInt(1, id);
 			ps.setString(1, spec);
-            id=id+1;
+
 			int i = ps.executeUpdate();
 			if (i == 1) {
 				f = true;

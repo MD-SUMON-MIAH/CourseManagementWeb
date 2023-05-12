@@ -13,8 +13,17 @@
 <head>
 <meta charset="UTF-8">
 <title>All Course</title>
+<link rel="icon" href="img/logo2.png" sizes="32x32" type="image/png">
 <%@include file="../component/allcdn.jsp"%>
 <style type="text/css">
+.card {
+        transition: transform 0.2s;
+      }
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
 </style>
 </head>
 <body>
@@ -34,22 +43,23 @@
 		                 
 		                 for(Course c:list2)
 		                 {%>
-			<div class="col-md-3"">
+			<div class="col-md-3 p-3">
 
 				<div class="card" style="width: 18rem;">
-					<img class="card-img-top" src="img/course.jpg" alt="Card image cap">
+					<img class="card-img-top" src="img/2.png" alt="Card image cap">
 					<div class="card-body">
 					
 					    
 						<h5 class="card-title"><%=c.getCourseName() %></h5>
 						<h5 class="card-title">SL No. : <%=c.getId() %></h5>
-						<p class="card-text">Course Code: CSE212</p>
+						<p class="card-text">Course Code: <%=c.getCourseCode() %></p>
 						<p class="card-text">Course Teacher : <%=c.getTeacherName() %> </p>
                    
 						<form action="Enrollcourse" method="post">
                             <% dao2.EnrollList.add(c.getId()); %>
-                            <input type="number" placeholder="Insert SL No. befor enroll" name="C_id" required>
-							<button type="submit" onClick="MyFun()" class="btn btn-outline-info text-black col-md-12">Enroll Course</button>
+                            <input type="hidden" value="<%= c.getId() %>"  name="C_id" required>
+                            <input type="hidden" value="${userObj.id }"  name="S_id" required>
+							<button type="submit" onClick="MyFun()" class="btn btn-outline-info text-black col-md-12 mt-2">Enroll Course</button>
 						</form>
 				        <script type="text/javascript">
 				        function MyFun()

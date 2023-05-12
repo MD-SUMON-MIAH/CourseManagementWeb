@@ -4,24 +4,4 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  <servlet>
-  	<servlet-name>Enrollment</servlet-name>
-  	<display-name>Enrollment</display-name>
-  	<description></description>
-  	<servlet-class>com.Enrollment</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>Enrollcourse</servlet-name>
-  	<display-name>Enrollcourse</display-name>
-  	<description></description>
-  	<servlet-class>com.user.servlet.Enrollcourse</servlet-class>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>Enrollment</servlet-name>
-  	<url-pattern>/Enrollment</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-  	<servlet-name>Enrollcourse</servlet-name>
-  	<url-pattern>/Enrollcourse</url-pattern>
-  </servlet-mapping>
 </web-app>
